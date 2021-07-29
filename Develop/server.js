@@ -15,6 +15,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 
+app.get('/api/notes', (req, res) => {
+    readFromFile(db).then((data) => res.json(JSON.parse(data)));
+});
+
+
 
 
 
