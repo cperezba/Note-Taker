@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const uniqid = require('uniqid');
 const db = require('./db/db.json');
 const express = require('express');
 const app = express();
@@ -29,30 +30,48 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
-
+let a = uniqid();
+console.log(a);
 
 
 //Post Requests
 app.post('/api/notes', (req, res) => {
     console.info(`${req.method} request received!`);
 
+    const { title, text } = req.body;
 
-    const newNote = req.body;
-    const fixedNote = JSON.stringify(newNote);
+    const newNote = {
+        id: uniqid(),
+        title,
+        text
+    };
+
+    console.log(newNote);
+    db.push(newNote);
 
 
-    fs.writeFile(db, fixedNote, (err) =>
+    const fixedNote = JSON.stringify(db);
+
+
+    fs.writeFileSync(path.join(__dirname, './db/db.json'), fixedNote, (err) =>
         err
             ? console.error(err)
             : console.log(
                 `Note has been posted!`
             )
     );
-
+    res.json(fixedNote);
 });
 
 
+//DELETE requests
+app.delete(`/api/notes/:id`, (req, res) => {
+    const { id } = req.params;
 
+    db.filter(note => note.id === id);
+
+
+} );
 
 
 
