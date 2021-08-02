@@ -5,7 +5,7 @@ const db = require('./db/db.json');
 const express = require('express');
 const app = express();
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 
 app.use(express.json());
@@ -15,7 +15,7 @@ app.use(express.static('public'));
 
 
 
-//Get Requests
+//GET Requests
 app.get('/api/notes', (req, res) => {
     let notes = fs.readFileSync('./db/db.json', 'utf8')
     console.log(notes);
@@ -30,8 +30,7 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
-let a = uniqid();
-console.log(a);
+
 
 
 //Post Requests
@@ -49,9 +48,7 @@ app.post('/api/notes', (req, res) => {
     console.log(newNote);
     db.push(newNote);
 
-
     const fixedNote = JSON.stringify(db);
-
 
     fs.writeFileSync(path.join(__dirname, './db/db.json'), fixedNote, (err) =>
         err
@@ -64,16 +61,28 @@ app.post('/api/notes', (req, res) => {
 });
 
 
+
+
 //DELETE requests
 app.delete(`/api/notes/:id`, (req, res) => {
-    const { id } = req.params;
+    let toBeDeleted = db.find(note => note.id === req.params.id);
+    let deleted = db.indexOf(toBeDeleted);
+    console.log(toBeDeleted, deleted);
+    db.splice(deleted, 1);
+    res.json(db);
 
-    db.filter(note => note.id === id);
-
-
+    const fixedNote = JSON.stringify(db.splice(deleted, 1));
+    
+    // fs.writeFileSync(path.join(__dirname, './db/db.json'), fixedNote, (err) =>
+    //     err
+    //         ? console.error(err)
+    //         : console.log(
+    //             `Note has been posted!`
+    //         )
+    // );
+    // res.json(fixedNote);
+    console.log(fixedNote);
 } );
-
-
 
 
 
