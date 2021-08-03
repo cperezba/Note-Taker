@@ -20,7 +20,7 @@
 
 ## <a id="description-header"></a> Description
 
-CRUD is an aboslutely essential aspect of web-development. To better learn and master CRUD HTML methods - namely, GET, POST, PUT, and DELETE - a Note Talker with broken code was refactored and made fully-functional.
+CRUD is an absolutely essential aspect of web-development. To better learn and master CRUD HTML methods - namely, GET, POST, PUT, and DELETE - a Note Talker with broken code was refactored and made fully-functional.
 
 The purpose of this Note Taker is essentially that of a simple to-do-list. A user can create, retrieve, and delete notes.
 
