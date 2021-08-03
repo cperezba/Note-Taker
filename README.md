@@ -60,8 +60,8 @@ Credit goes to the UTA Bootcamp for providing instruction and tools for learning
 
 Note Taker is released under the MIT licence.
 
----
 
+<br/>
 
 ## <a id="questions-header"></a> Questions
 
@@ -69,6 +69,7 @@ For more information and suggestions you can contact me at caperez317@gmail.com.
 
 For a list of other projects and repos visit https://github.com/cperezba
 
+---
 
 
 
