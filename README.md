@@ -30,7 +30,7 @@ The purpose of this Note Taker is essentially that of a simple to-do-list. A use
 
 ## <a id="installation-header"></a> Installation
 
-No installation necessary. Just follow the link here to access the fully functional application!
+No installation necessary! To access the application, click on the link [here](https://note-taker-dev.herokuapp.com/).
 
 
 <br/>
@@ -38,8 +38,11 @@ No installation necessary. Just follow the link here to access the fully functio
 ## <a id="usage-header"></a> Usage
 
 Simply write the title and body of a note to be saved and click on the save icon on the upper right corner. All saved notes shall appear on the left, which can then be retrieved by clicking on the body of the text. To delete, click the red trash icon on the notes tab.
-![Introductory Page of Note Taker Application](assets/images/note-taker-introduction.PNG)
 
+<br/>
+
+![Introductory Page of Note Taker Application](assets/images/note-taker-introduction.PNG)
+___
 ![Note Taker Main Application Page](assets/images/note-taker-application.PNG)
 
 
@@ -57,9 +60,8 @@ Credit goes to the UTA Bootcamp for providing instruction and tools for learning
 
 Note Taker is released under the MIT licence.
 
+---
 
-
-<br/>
 
 ## <a id="questions-header"></a> Questions
 
@@ -69,4 +71,4 @@ For a list of other projects and repos visit https://github.com/cperezba
 
 
 
----
+
