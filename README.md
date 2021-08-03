@@ -44,7 +44,7 @@ Simply write the title and body of a note to be saved and click on the save icon
 ![Introductory Page of Note Taker Application](assets/images/note-taker-introduction.PNG)
 ___
 ![Note Taker Main Application Page](assets/images/note-taker-application.PNG)
-
+___
 
 
 <br/>
